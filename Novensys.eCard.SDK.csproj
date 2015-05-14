@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Program Files (x86)\CNAS\SIUI-SPITAL\Novensys.eCard.SDK.dll-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2BD950F0-7FE0-4DBB-8437-94CDEFD3EA7D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AssemblyName>Novensys.eCard.SDK</AssemblyName>
+    <ApplicationVersion>1.1.56.0</ApplicationVersion>
+    <RootNamespace>Novensys</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="BouncyCastle.Crypto">
+      <HintPath>lib\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ManagerSesiuniCard.cs" />
+    <Compile Include="ManagerSesiuniTerminal.cs" />
+    <Compile Include="MapariEroriWinSCard.cs" />
+    <Compile Include="RaspunsuriOperatiiCardPeTipuriOperatii.cs" />
+    <Compile Include="RaspunsOperatieCardPeTipOperatie.cs" />
+    <Compile Include="MesajeRaspunsCard.cs" />
+    <Compile Include="MesajeRaspunsTerminal.cs" />
+    <Compile Include="SesiuneLucru.cs" />
+    <Compile Include="SesiuneCard.cs" />
+    <Compile Include="SesiuneTerminal.cs" />
+    <Compile Include="TerminalManager.cs" />
+    <Compile Include="ASN1Helper.cs" />
+    <Compile Include="CryptoHelper.cs" />
+    <Compile Include="Utils\Crypto\DESEncryptor.cs" />
+    <Compile Include="Utils\Crypto\Encryptor.cs" />
+    <Compile Include="Utils\Crypto\TripleDESEncryptor.cs" />
+    <Compile Include="Utils\Hex\HexEncoding.cs" />
+    <Compile Include="Utils\Hex\HexFormatting.cs" />
+    <Compile Include="Utils\Hex\HexUtil.cs" />
+    <Compile Include="Utils\Log\LogManager.cs" />
+    <Compile Include="ASN1\ASN_EHCFactory.cs" />
+    <Compile Include="ASN1\EHCDG11\DG11.cs" />
+    <Compile Include="ASN1\EHCDG1\DG1.cs" />
+    <Compile Include="ASN1\EHCDG2\DG2.cs" />
+    <Compile Include="ASN1\EHCDG3\DG3.cs" />
+    <Compile Include="ASN1\EHCDG4\ContactPerson.cs" />
+    <Compile Include="ASN1\EHCDG4\DG4.cs" />
+    <Compile Include="ASN1\EHCDG5\DG5.cs" />
+    <Compile Include="ASN1\EHCDG6\ChronicDesease.cs" />
+    <Compile Include="ASN1\EHCDG6\DG6.cs" />
+    <Compile Include="ASN1\EHCDG6\Diagnostic.cs" />
+    <Compile Include="ASN1\EHCDG7\DG7.cs" />
+    <Compile Include="ASN1\EHCDG8\DG8.cs" />
+    <Compile Include="ASN1\EHCDG9\DG9.cs" />
+    <Compile Include="ASN1\EHCTECH\TECH.cs" />
+    <Compile Include="ASN1\EHDG10\DG10.cs" />
+    <Compile Include="SmartCard\Camp.cs" />
+    <Compile Include="SmartCard\CardData.cs" />
+    <Compile Include="SmartCard\CardFile.cs" />
+    <Compile Include="SmartCard\PersoanaContact.cs" />
+    <Compile Include="SmartCard\Sectiuni\DateAdministrative.cs" />
+    <Compile Include="SmartCard\Sectiuni\DateClinicePrimare.cs" />
+    <Compile Include="SmartCard\Sectiuni\DateIdentificare.cs" />
+    <Compile Include="SmartCard\Sectiuni\DeviceData.cs" />
+    <Compile Include="SmartCard\Sectiuni\DezvoltariUlterioare1.cs" />
+    <Compile Include="SmartCard\Sectiuni\DezvoltariUlterioare2.cs" />
+    <Compile Include="SmartCard\Sectiuni\ExtensiiClinice1.cs" />
+    <Compile Include="SmartCard\Sectiuni\ExtensiiClinice2.cs" />
+    <Compile Include="SmartCard\Sectiuni\SecurityData.cs" />
+    <Compile Include="Terminal\ActualizareTerminalData.cs" />
+    <Compile Include="Terminal\IdentificareTerminalData.cs" />
+    <Compile Include="Terminal\Profil.cs" />
+    <Compile Include="Terminal\TerminalData.cs" />
+    <Compile Include="ISO8583\AdditionalAmount.cs" />
+    <Compile Include="ISO8583\Adjuster.cs" />
+    <Compile Include="ISO8583\AMessage.cs" />
+    <Compile Include="ISO8583\Bitmap.cs" />
+    <Compile Include="ISO8583\Field.cs" />
+    <Compile Include="ISO8583\FieldDescriptor.cs" />
+    <Compile Include="ISO8583\HashtableMessage.cs" />
+    <Compile Include="ISO8583\Iso8583Message.cs" />
+    <Compile Include="ISO8583\Iso8583MessageFactory.cs" />
+    <Compile Include="ISO8583\IsoConvert.cs" />
+    <Compile Include="ISO8583\LambdaAdjuster.cs" />
+    <Compile Include="ISO8583\PanMaskDecorator.cs" />
+    <Compile Include="ISO8583\ProcessingCode.cs" />
+    <Compile Include="ISO8583\Template.cs" />
+    <Compile Include="ISO8583\TransmissionDateTime.cs" />
+    <Compile Include="ISO8583\Utils.cs" />
+    <Compile Include="ISO8583\Validators.cs" />
+    <Compile Include="ISO8583\Crypto\Iso0PinBlockFormatter.cs" />
+    <Compile Include="ISO8583\Exceptions\FieldDescriptorException.cs" />
+    <Compile Include="ISO8583\Exceptions\FormatException.cs" />
+    <Compile Include="ISO8583\Exceptions\FieldFormatException.cs" />
+    <Compile Include="ISO8583\Exceptions\FieldLengthException.cs" />
+    <Compile Include="ISO8583\Exceptions\UnknownFieldException.cs" />
+    <Compile Include="ISO8583\FieldValidator\AlphaFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\AlphaNumericAndSpaceFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\AlphaNumericFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\AlphaNumericPrintableFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\AlphaNumericSpecialFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\FieldValidators.cs" />
+    <Compile Include="ISO8583\FieldValidator\HexFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\NoneFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\NumericFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\Rev87AmountFieldValidator.cs" />
+    <Compile Include="ISO8583\FieldValidator\Track2FieldValidator.cs" />
+    <Compile Include="ISO8583\Formatter\AsciiFormatter.cs" />
+    <Compile Include="ISO8583\Formatter\BcdFormatter.cs" />
+    <Compile Include="ISO8583\Formatter\BinaryFormatter.cs" />
+    <Compile Include="ISO8583\Formatter\Formatters.cs" />
+    <Compile Include="ISO8583\LengthFormatters\FixedLengthFormatter.cs" />
+    <Compile Include="ISO8583\LengthFormatters\VariableLengthFormatter.cs" />
+    <Compile Include="ISO8583\LengthValidators\FixedLengthValidator.cs" />
+    <Compile Include="ISO8583\LengthValidators\VariableLengthValidator.cs" />
+    <Compile Include="ISO8583\NetworkHeaders\TwoByteHeader.cs" />
+    <Compile Include="PCSC\CommandFunction.cs" />
+    <Compile Include="PCSC\WinSCardCardJob.cs" />
+    <Compile Include="PCSC\WinSCardContextJob.cs" />
+    <Compile Include="PCSC\WinSCardException.cs" />
+    <Compile Include="PCSC\WinSCardReaderInfo.cs" />
+    <Compile Include="PCSC\ACR\ACRCardTextReader.cs" />
+    <Compile Include="PCSC\Apdu\ApduException.cs" />
+    <Compile Include="PCSC\Apdu\ApduUtil.cs" />
+    <Compile Include="PCSC\Apdu\CmdApdu.cs" />
+    <Compile Include="PCSC\Apdu\RespApdu.cs" />
+    <Compile Include="PCSC\HID\HIDCardTextReader.cs" />
+    <Compile Include="PCSC\Reiner\ReinerCardTextReader.cs" />
+    <Compile Include="Properties\Settings.Designer.cs" />
+    <Compile Include="Remoting\BaseRemotingClient.cs" />
+    <Compile Include="Remoting\BaseRemotingServer.cs" />
+    <Compile Include="Remoting\CommunicationRemotingClient.cs" />
+    <Compile Include="Remoting\CommunicationRemotingServer.cs" />
+    <Compile Include="Remoting\EvenimenteCard.cs" />
+    <Compile Include="Remoting\SchimbareStareCardEventArgs.cs" />
+    <Compile Include="Remoting\RemotingHelper.cs" />
+    <Compile Include="TCPCommunication\CommunicationException.cs" />
+    <Compile Include="TCPCommunication\CommunicationProcess.cs" />
+    <Compile Include="TCPCommunication\CommunicationService.cs" />
+    <Compile Include="TCPCommunication\Dictionaries.cs" />
+    <Compile Include="TCPCommunication\1Dictionaries.cs" />
+    <Compile Include="TCPCommunication\2Dictionaries.cs" />
+    <Compile Include="TCPCommunication\Globals.cs" />
+    <Compile Include="TCPCommunication\IPAddressUM.cs" />
+    <Compile Include="TCPCommunication\ISO8583Util.cs" />
+    <Compile Include="TCPCommunication\TCPClient.cs" />
+    <Compile Include="TCPCommunication\TCPCServer.cs" />
+    <Compile Include="TCPCommunication\UMClient.cs" />
+    <Compile Include="TCPCommunication\UMResponses.cs" />
+    <Compile Include="Terminal\TerminalDataIdentifier.cs" />
+    <Compile Include="Terminal\TerminalDataStorage.cs" />
+    <Compile Include="Novensys.ASN1\AlignedBasicPerEncoder.cs" />
+    <Compile Include="Novensys.ASN1\AlignedPerDecoder.cs" />
+    <Compile Include="Novensys.ASN1\Asn1Exception.cs" />
+    <Compile Include="Novensys.ASN1\Asn1ValidationException.cs" />
+    <Compile Include="Novensys.ASN1\BerDecoder.cs" />
+    <Compile Include="Novensys.ASN1\BerEncoder.cs" />
+    <Compile Include="Novensys.ASN1\CanonicalXerEncoder.cs" />
+    <Compile Include="Novensys.ASN1\DerEncoder.cs" />
+    <Compile Include="Novensys.ASN1\ExtendedXerDecoder.cs" />
+    <Compile Include="Novensys.ASN1\ExtendedXerEncoder.cs" />
+    <Compile Include="Novensys.ASN1\UnalignedBasicPerEncoder.cs" />
+    <Compile Include="Novensys.ASN1\UnalignedPerDecoder.cs" />
+    <Compile Include="Novensys.ASN1\XerDecoder.cs" />
+    <Compile Include="Novensys.ASN1\XerEncoder.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1Type.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1ConstructedType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1SequenceType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1OctetStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1StringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1UnknownMultiplierStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1UTF8StringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1KnownMultiplierStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1NumericStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1PrintableStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1ConstructedOfType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1SequenceOfType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypeWriter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypePerWriter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypeReader.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypePerReader.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypeBerReader.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypeBerWriter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypeXerWriter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypeXerReader.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1BitStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1BMPStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1BooleanType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1CharacterStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1ChoiceType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TimeType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1DateTimeType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1DateType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1DurationType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1EmbeddedPDVType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1EnumeratedType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1ExternalType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1VisibleStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1GeneralizedTimeType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1GeneralStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1GraphicStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1IA5StringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1InstanceOfType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1IntegerType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1ISO646StringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1NullType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1ObjectDescriptorType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1ObjectIdentifierType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1OpenType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1RealType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1RelativeOIDType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1SetOfType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1SetType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1T61StringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TeletexStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TimeOfDayType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypeComparer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1TypeExplorer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1UniversalStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1UTCTimeType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Asn1VideotexStringType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\AbstractBuffer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\AbstractBitField.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\KnownMultiplierStringBuffer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\AlphabetStringBuffer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\BitFieldWrapper.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\BoundStringBuffer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\BufferFactory.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\DirectStringBuffer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\IntegerBuffer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\TypeVectorBuffer.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\Asn1ChoiceTypeAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\DynAsn1IntegerType.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\Asn1IntegerTypeAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\Asn1SequenceTypeAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\Asn1TimeTypeAdapterFactory.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\CenturyAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\DayAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\DurationIntervalAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\DynAsn1ChoiceTypeAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\DynAsn1SequenceTypeAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\FractionAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\FractionalPart.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\FractionNumberDigitsAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\HoursAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\HoursUTCAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\MinutesAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\MonthAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\RecurrenceAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\SecondsAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\TimeDifferenceAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\WeekAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\YearAdapter.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\YearEncodingAdapter.cs" />
+    <Compile Include="Novensys.ASN1\IO\Asn1BitInputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\Asn1BitOutputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\Asn1InputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\Asn1OutputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\Asn1PrintWriter.cs" />
+    <Compile Include="Novensys.ASN1\IO\ByteArrayAsn1BitInputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\ByteArrayAsn1BitOutputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\ByteArrayAsn1InputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\ByteArrayAsn1OutputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\DefaultAsn1PrintWriter.cs" />
+    <Compile Include="Novensys.ASN1\IO\XmlAsn1InputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\XmlAsn1OutputStream.cs" />
+    <Compile Include="Novensys.ASN1\Util\Asn1Factory.cs" />
+    <Compile Include="Novensys.ASN1\Util\Asn1Tag.cs" />
+    <Compile Include="Novensys.ASN1\Util\Base64.cs" />
+    <Compile Include="Novensys.ASN1\Util\BigInteger.cs" />
+    <Compile Include="Novensys.ASN1\Util\BitString.cs" />
+    <Compile Include="Novensys.ASN1\Util\ByteArray.cs" />
+    <Compile Include="Novensys.ASN1\Util\DynamicByteArray.cs" />
+    <Compile Include="Novensys.ASN1\Util\PiOrComment.cs" />
+    <Compile Include="Novensys.ASN1\Util\Report.cs" />
+    <Compile Include="Novensys.ASN1\Util\Tools.cs" />
+    <Compile Include="StareCardInTerminalSchimbataEventHandler.cs" />
+    <Compile Include="DupaStareCardInTerminalSchimbataEventHandler.cs" />
+    <Compile Include="StareAutentificareSchimbataEventHandler.cs" />
+    <Compile Include="StareCardSchimbataEventHandler.cs" />
+    <Compile Include="StareEditarePeTerminalSchimbataEventHandler.cs" />
+    <Compile Include="StareComunicatieCuUMSchimbataEventHandler.cs" />
+    <Compile Include="TipTerminalSchimbatEventHandler.cs" />
+    <Compile Include="ActivateStatus.cs" />
+    <Compile Include="ActivateStatusExtern.cs" />
+    <Compile Include="TipOperatieCard.cs" />
+    <Compile Include="StariAutentificare.cs" />
+    <Compile Include="TipPIN.cs" />
+    <Compile Include="ModEditarePeTerminal.cs" />
+    <Compile Include="CoduriRaspunsOperatieCard.cs" />
+    <Compile Include="CoduriRaspunsOperatieCamp.cs" />
+    <Compile Include="StareCardInTerminal.cs" />
+    <Compile Include="StareComunicatieCuUM.cs" />
+    <Compile Include="TipCertificat.cs" />
+    <Compile Include="TipTerminal.cs" />
+    <Compile Include="ISesiuneCard.cs" />
+    <Compile Include="ISesiuneTerminal.cs" />
+    <Compile Include="ReadCardTextEventArgs.cs" />
+    <Compile Include="Utils\Hex\ValueFormat.cs" />
+    <Compile Include="Entities\IdentificatorDrepturi.cs" />
+    <Compile Include="Entities\Token.cs" />
+    <Compile Include="SmartCard\StareCard.cs" />
+    <Compile Include="SmartCard\CoduriCampuriCard.cs" />
+    <Compile Include="SmartCard\PartitieCard.cs" />
+    <Compile Include="SmartCard\ProfileCard.cs" />
+    <Compile Include="SmartCard\CoduriFisiereCard.cs" />
+    <Compile Include="Terminal\CoduriRaspunsOperatieTerminal.cs" />
+    <Compile Include="Terminal\StareTerminal.cs" />
+    <Compile Include="ISO8583\IMessage.cs" />
+    <Compile Include="ISO8583\MessageTypes.cs" />
+    <Compile Include="ISO8583\FieldType.cs" />
+    <Compile Include="ISO8583\Fields.cs" />
+    <Compile Include="ISO8583\IField.cs" />
+    <Compile Include="ISO8583\IFieldDescriptor.cs" />
+    <Compile Include="ISO8583\FuncStringString.cs" />
+    <Compile Include="ISO8583\IsoProcessingCode.cs" />
+    <Compile Include="ISO8583\FieldValidator\IFieldValidator.cs" />
+    <Compile Include="ISO8583\Formatter\IFormatter.cs" />
+    <Compile Include="ISO8583\LengthFormatters\ILengthFormatter.cs" />
+    <Compile Include="ISO8583\LengthValidators\ILengthValidator.cs" />
+    <Compile Include="ISO8583\NetworkHeaders\INetworkHeader.cs" />
+    <Compile Include="PCSC\PCSC.cs" />
+    <Compile Include="PCSC\IWinSCardTextReader.cs" />
+    <Compile Include="PCSC\CardEventArgs.cs" />
+    <Compile Include="PCSC\CardInsertedEventHandler.cs" />
+    <Compile Include="PCSC\CardRemovedEventHandler.cs" />
+    <Compile Include="PCSC\CommandExecutedEventHandler.cs" />
+    <Compile Include="PCSC\SCARD_SCOPE.cs" />
+    <Compile Include="PCSC\SCARD_SHARE_MODE.cs" />
+    <Compile Include="PCSC\SCARD_PROTOCOL.cs" />
+    <Compile Include="PCSC\SCARD_DISCONNECT.cs" />
+    <Compile Include="PCSC\SCARD_CARD_STATE.cs" />
+    <Compile Include="PCSC\SCARD_CLASS.cs" />
+    <Compile Include="PCSC\SCARD_ATTR.cs" />
+    <Compile Include="PCSC\SCARD_ERROR.cs" />
+    <Compile Include="PCSC\ICardTextReader.cs" />
+    <Compile Include="PCSC\SCARD_IO_REQUEST.cs" />
+    <Compile Include="PCSC\SCARD_READERSTATE.cs" />
+    <Compile Include="PCSC\WinSCard.cs" />
+    <Compile Include="PCSC\ACR\READ_KEY_OPTION.cs" />
+    <Compile Include="PCSC\ACR\KeyReturnCondition.cs" />
+    <Compile Include="PCSC\ACR\EchoLCDMode.cs" />
+    <Compile Include="PCSC\Apdu\ICmdApdu.cs" />
+    <Compile Include="PCSC\Apdu\IApduExchange.cs" />
+    <Compile Include="PCSC\Apdu\IRespApdu.cs" />
+    <Compile Include="Remoting\IRemoting.cs" />
+    <Compile Include="Remoting\ObtineTokenEventHandler.cs" />
+    <Compile Include="Remoting\SchimbarePINEventHandler.cs" />
+    <Compile Include="Remoting\SchimbarePINTransportEventHandler.cs" />
+    <Compile Include="Remoting\AutentificareEventHandler.cs" />
+    <Compile Include="Remoting\ResetarePINEventHandler.cs" />
+    <Compile Include="Remoting\SchimbareStareCardEventHandler.cs" />
+    <Compile Include="TCPCommunication\CommunicationExceptionType.cs" />
+    <Compile Include="TCPCommunication\ProcessRequestDelegate.cs" />
+    <Compile Include="TCPCommunication\ErrorCodes.cs" />
+    <Compile Include="TCPCommunication\WarningCodes.cs" />
+    <Compile Include="TCPCommunication\InformationCodes.cs" />
+    <Compile Include="Novensys.ASN1\IEncoder.cs" />
+    <Compile Include="Novensys.ASN1\IDecoder.cs" />
+    <Compile Include="Novensys.ASN1\NamespaceDoc.cs" />
+    <Compile Include="Novensys.ASN1\Type\NamespaceDoc.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Buffer\Granularity.cs" />
+    <Compile Include="Novensys.ASN1\Type\Per\Time\NamespaceDoc.cs" />
+    <Compile Include="Novensys.ASN1\IO\IAsn1BitInputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\IAsn1BitOutputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\IAsn1InputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\IAsn1OutputStream.cs" />
+    <Compile Include="Novensys.ASN1\IO\NamespaceDoc.cs" />
+    <Compile Include="Novensys.ASN1\Util\NamespaceDoc.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>
