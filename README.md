@@ -20,9 +20,9 @@ a dezvoltatorilor. Ideal si de buna cuvinta ar fi sa fie publicate aici contribu
 de catre cei ce beneficiaza pe aceasta cale de informatiile cuprinse in surse.
 
 Un alt motiv pentru publicarea acestui cod a fost lipsa de informatii si documentarea frugala, acesta fiind dealtfel
-si principalul motiv pentru care eu personal numesc acest sdk o porcarie, codul in sine fiind ok pana la un punct.
+si principalul motiv pentru care eu personal numesc acest sdk o porcarie, codul in sine fiind ok pana la un punct iar anumite abordari chiar interesante ( sa nu fie cumva vina decompliatorului ).
 
-Multumesc pe aceasta cale dezvoltatorilor nenumiti care pana la un punct au dezvoltat aceasta componenta software.
+Multumesc de aceea dezvoltatorilor ne numiti care pana la un punct au dezvoltat aceasta componenta software si evident Casei Nationale de Asigurari de Sanatate , Novensys. Sper sa isi gaseasca utilitatea cel putin ca material didactic.
 
 
 
