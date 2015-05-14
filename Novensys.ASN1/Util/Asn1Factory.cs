@@ -195,7 +195,7 @@ namespace Novensys.ASN1.Util
         return (IEncoder) null;
       try
       {
-        return (IEncoder) Activator.CreateInstance(Type.GetType(typeName));
+        return (IEncoder) Activator.CreateInstance(System.Type.GetType(typeName));
       }
       catch (Exception ex)
       {

@@ -119,6 +119,7 @@ namespace Novensys.ASN1.Type
                     str2 = ((object) arcsFromEncoding[1]).ToString();
                     break;
                 }
+                break;
               case 1:
                 switch (num2)
                 {
@@ -138,6 +139,7 @@ namespace Novensys.ASN1.Type
                     str2 = ((object) arcsFromEncoding[1]).ToString();
                     break;
                 }
+                break;
               default:
                 str2 = ((object) arcsFromEncoding[1]).ToString();
                 break;

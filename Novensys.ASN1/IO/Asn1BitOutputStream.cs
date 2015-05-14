@@ -115,7 +115,7 @@ namespace Novensys.ASN1.IO
 
     public virtual void writeOneBitNoAlign(bool aBit)
     {
-      this.write(aBit ? (byte) sbyte.MinValue : (byte) 0, 1);
+      this.write(aBit ? (byte) unchecked( sbyte.MinValue) : (byte) 0, 1);
     }
 
     public void writePaddingBit(int nbBits)

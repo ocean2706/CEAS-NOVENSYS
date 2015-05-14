@@ -20,7 +20,11 @@ namespace Novensys.ASN1.Type
     private static byte[] EPILOGUE_OF_INDEFINITE_LENGTH = new byte[2];
     private static byte[] PROLOGUE_OF_INDEFINITE_LENGTH = new byte[1]
     {
-      (byte) sbyte.MinValue
+
+        //use unchecked
+        
+        (byte) uint.MinValue
+       
     };
     protected bool _isCanonicalizingTimeValues = true;
     protected bool _isIndefiniteLengthForm = false;

@@ -533,7 +533,7 @@ namespace Novensys.ASN1.Util
       {
         for (int index = 69; index >= bigInteger.dataLength; --index)
           bigInteger.data[index] = uint.MaxValue;
-        uint num1 = (uint) int.MinValue;
+        uint num1 = (uint) uint.MinValue;
         for (int index = 0; index < 32 && ((int) bigInteger.data[bigInteger.dataLength - 1] & (int) num1) == 0; ++index)
         {
           IntPtr num2;
@@ -849,6 +849,13 @@ namespace Novensys.ASN1.Util
       return ((int) this.data[69] & int.MinValue) != 0 ? -1 : 1;
     }
 
+    private int for1idx(int i)
+    {
+       
+        ulong num4;
+        outRemainder.data[index2--] = (uint) (num4 % num2);
+      
+    }
     private static void singleByteDivide(BigInteger bi1, BigInteger bi2, BigInteger outQuotient, BigInteger outRemainder)
     {
       uint[] numArray = new uint[70];
@@ -867,10 +874,7 @@ namespace Novensys.ASN1.Util
         numArray[num1++] = (uint) num4;
         outRemainder.data[index1] = (uint) (num3 % num2);
       }
-      for (int index2 = index1 - 1; index2 >= 0; {
-        ulong num4;
-        outRemainder.data[index2--] = (uint) (num4 % num2);
-      }
+      for (int index2 = index1 - 1; index2 >= 
       )
       {
         num4 = (ulong) (outRemainder.data[index2 + 1] + outRemainder.data[index2]);

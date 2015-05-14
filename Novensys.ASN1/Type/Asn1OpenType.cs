@@ -318,10 +318,10 @@ namespace Novensys.ASN1.Type
 
     public virtual void ResolveContent(string className)
     {
-      Type type;
+      System.Type type;
       try
       {
-        type = Type.GetType(className, true);
+        type = System.Type.GetType(className, true);
       }
       catch (TypeLoadException ex)
       {
@@ -330,7 +330,7 @@ namespace Novensys.ASN1.Type
       this.ResolveContent(type);
     }
 
-    public virtual void ResolveContent(Type cla)
+    public virtual void ResolveContent(System.Type cla)
     {
       if (cla == null || this.__type != null)
         return;

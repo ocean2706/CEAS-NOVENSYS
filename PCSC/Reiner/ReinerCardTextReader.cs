@@ -193,8 +193,10 @@ label_11:
         {
           case '\r':
             goto label_12;
+            break;
           case '\x001B':
             goto label_13;
+            break;
           case 'M':
           case '*':
           case '.':
@@ -208,19 +210,22 @@ label_11:
         }
         if (num3 == 0)
         {
-          --num1;
-          str = str.Substring(0, num1);
-          this.WriteText(prompt + new string('*', num1));
-          goto case 'M';
+            --num1;
+            str = str.Substring(0, num1);
+            this.WriteText(prompt + new string('*', num1));
+            //goto case 'M'; //????
+            continue;
         }
         else if ("0123456789".IndexOf(c) >= 0 && num1 + 1 < this.displayWidth)
         {
-          ++num1;
-          str = str + new string(c, 1);
-          goto case 'M';
+            ++num1;
+            str = str + new string(c, 1);
+            //goto case 'M';
+            continue;
         }
         else
-          goto case 'M';
+            //goto case 'M';
+            continue;
       }
 label_3:
       throw new Exception("Failed to get APDU Exchanger.");

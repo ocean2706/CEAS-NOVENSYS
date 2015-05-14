@@ -259,7 +259,7 @@ namespace Novensys.ASN1.Type
 
     protected internal override void __setTypeValue(Asn1Type typeInstance)
     {
-      Type type = (Type) null;
+      System.Type type =  null;
       Asn1Type typeInstance1 = (Asn1Type) null;
       if (typeInstance == null)
         this.ResetType();
