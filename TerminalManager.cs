@@ -769,18 +769,18 @@ namespace Novensys.eCard.SDK
         throw new Exception(this.MesajeRaspunsCard[CoduriRaspunsOperatieCard.ERR_CITIRE_FISIER_TECH]);
       // ISSUE: explicit reference operation
       // ISSUE: variable of a reference type
-      ActivateStatus?& local1 = @status;
+      //status?local1 = @status;
       ActivateStatus? nullable1 = status;
       int num1 = nullable1.HasValue ? (int) nullable1.GetValueOrDefault() : (int) ASN1Helper.DecodeActivateStatus(data);
       // ISSUE: explicit reference operation
-      ^local1 = new ActivateStatus?((ActivateStatus) num1);
+      var local1 = new ActivateStatus?((ActivateStatus) num1); // nullable constructor
       // ISSUE: explicit reference operation
       // ISSUE: variable of a reference type
-      ActivateStatusExtern?& local2 = @statusExtern;
+      ActivateStatusExtern? local2 = @statusExtern;
       ActivateStatusExtern? nullable2 = statusExtern;
       int num2 = nullable2.HasValue ? (int) nullable2.GetValueOrDefault() : (int) ASN1Helper.DecodeActivateStatusExtern(data);
       // ISSUE: explicit reference operation
-      ^local2 = new ActivateStatusExtern?((ActivateStatusExtern) num2);
+       local2 = new ActivateStatusExtern?((ActivateStatusExtern) num2);
       if (HexFormatting.ToHexString((uint) this.UpdateBinary(ASN1Helper.EncodeActivateStatus((int) status.Value, (int) statusExtern.Value)).SW1SW2.Value) != "9000")
         throw new Exception(this.MesajeRaspunsCard[CoduriRaspunsOperatieCard.ERR_SCRIERE_FISIER_TECH]);
     }

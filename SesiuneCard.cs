@@ -286,7 +286,7 @@ namespace Novensys.eCard.SDK
       id.NumeStatie = IPAddressUM.HostName;
       id.AdresaUM = IPAddressUM.Address.ToString();
       bool flag = TerminalDataStorage.Instance.Exists(id);
-      LogManager.FileLog(string.Format("\r\n{0}\r\n{1}\r\n{2}", (object) id.HashText, (object) id.Hash, (object) (bool) (flag ? 1 : 0)));
+      LogManager.FileLog(string.Format("\r\n{0}\r\n{1}\r\n{2}", (object) id.HashText, (object) id.Hash, (object) (bool) (flag ? true : false)));
       if (flag)
       {
         try

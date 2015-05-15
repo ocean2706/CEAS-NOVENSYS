@@ -495,7 +495,7 @@ namespace Novensys.ASN1.Type
 
     protected internal virtual void __decodeRealValue(Stream inputStream, Asn1RealType typeInstance, long length)
     {
-      base.init(inputStream);
+        init(inputStream);
       this.decodeRealValue(typeInstance, length);
     }
 
@@ -665,7 +665,7 @@ namespace Novensys.ASN1.Type
 
     protected override void decodeImpl(Stream inputStream, Asn1Type type)
     {
-      base.init(inputStream);
+       init(inputStream);
       type.__read(this, true, false, 0L);
       this.close();
     }

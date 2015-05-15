@@ -1456,6 +1456,7 @@ namespace Novensys.ASN1.IO
               }
               else
                 goto label_51;
+              break;
             case '<':
               if (!hadCharData || !this.tokenize)
               {
@@ -1483,6 +1484,7 @@ namespace Novensys.ASN1.IO
                         }
                         else
                           goto label_29;
+                        break;
                       case '[':
                         this.parseCDSect(hadCharData);
                         if (!this.tokenize)
@@ -1499,11 +1501,15 @@ namespace Novensys.ASN1.IO
                         }
                         else
                           goto label_34;
+                        break;
                       default:
                         goto label_39;
+                        break;
                     }
+                    break;
                   case '/':
                     goto label_24;
+                    break;
                   case '?':
                     this.parsePI();
                     if (!this.tokenize)
@@ -1521,18 +1527,22 @@ namespace Novensys.ASN1.IO
                     }
                     else
                       goto label_41;
+                    break;
                   default:
                     goto label_45;
+                    break;
                 }
               }
               else
                 goto label_22;
+              break;
             default:
               if (flag1)
               {
                 this.joinPC();
                 flag1 = false;
               }
+              
               hadCharData = true;
               bool flag2 = false;
               bool flag3 = !this.tokenize || !this.roundtripSupported;
@@ -2468,14 +2478,17 @@ label_29:
                       }
                       else
                         goto label_51;
+                      break;
                     case '/':
                       throw new Asn1Exception(35, "end tag not allowed in epilog but got " + this.printable(ch2) + " (position:" + this.getPositionDescription() + ")");
+                      break;
                     case '?':
                       this.parsePI();
                       if (this.tokenize)
                         return this.eventType = 8;
                       else
                         break;
+                      break;
                     default:
                       if (!this.isNameStartChar(ch2))
                       {
@@ -2486,6 +2499,7 @@ label_29:
                         this.pos = this.posStart;
                         return this.eventType = 1;
                       }
+                      break;
                   }
                 }
                 else
@@ -2734,8 +2748,10 @@ label_44:
                   default:
                     goto label_21;
                 }
+                break;
               case '/':
                 goto label_22;
+                break;
               case '?':
                 if (this.parsePI())
                 {
@@ -2750,8 +2766,10 @@ label_44:
                   flag1 = false;
                   break;
                 }
+                break;
               default:
                 goto label_23;
+                break;
             }
           }
           else

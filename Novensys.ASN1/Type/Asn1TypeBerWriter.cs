@@ -702,7 +702,7 @@ namespace Novensys.ASN1.Type
         int num4 = Tools.nbBytesForNumber(number1);
         int num5 = Tools.nbBytesForPositiveNumber(number2);
         int num6 = 1 + num5;
-        byte b = flag ? (byte) 192 : (byte) sbyte.MinValue;
+        byte b = flag ? (byte) 192 : (byte) byte.MinValue;
         int num7;
         switch (num4)
         {

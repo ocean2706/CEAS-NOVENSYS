@@ -162,7 +162,7 @@ namespace Novensys.ASN1.Util
         return (IDecoder) null;
       try
       {
-        return (IDecoder) Activator.CreateInstance(Type.GetType(typeName));
+        return (IDecoder) Activator.CreateInstance(System.Type.GetType(typeName));
       }
       catch (Exception ex)
       {
@@ -259,7 +259,7 @@ namespace Novensys.ASN1.Util
     {
       try
       {
-        Type.GetType(className).GetMethod("__setEncodingRulesEnabled", new Type[1]
+        System.Type.GetType(className).GetMethod("__setEncodingRulesEnabled", new System.Type[1]
         {
           typeof (bool)
         }).Invoke((object) null, new object[1]
@@ -274,10 +274,10 @@ namespace Novensys.ASN1.Util
 
     private static ArrayList getPropertiesFor(string className)
     {
-      Type type;
+      System.Type type;
       try
       {
-        type = Type.GetType(className);
+        type = System.Type.GetType(className);
       }
       catch (Exception ex)
       {
@@ -286,7 +286,7 @@ namespace Novensys.ASN1.Util
       ArrayList arrayList;
       try
       {
-        MethodInfo method = type.GetMethod("__setEncodingRulesEnabled", new Type[1]
+        MethodInfo method = type.GetMethod("__setEncodingRulesEnabled", new System.Type[1]
         {
           typeof (bool)
         });
@@ -299,7 +299,7 @@ namespace Novensys.ASN1.Util
         {
           (object) false
         });
-        arrayList = (ArrayList) type.GetMethod("PropertyNames", new Type[0]).Invoke(instance, new object[0]);
+        arrayList = (ArrayList) type.GetMethod("PropertyNames", new System.Type[0]).Invoke(instance, new object[0]);
       }
       catch (Exception ex)
       {

@@ -237,7 +237,7 @@ namespace Novensys.ASN1.Util
     {
       long num1 = number;
       byte num2 = num1 >= 0L ? (byte) 0 : byte.MaxValue;
-      byte num3 = num1 >= 0L ? (byte) 0 : (byte) sbyte.MinValue;
+      byte num3 = num1 >= 0L ? (byte) 0 : (byte) byte.MinValue;
       int num4 = 1;
       int num5 = 1;
       while (num5 < 8)
