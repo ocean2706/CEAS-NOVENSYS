@@ -4,7 +4,8 @@ cod sursa pentru NOVENSYS SDK reversed by different tools
 
 ############################### blocare  card ###################################
 blocarea cardului apare cel mai probabil aici
- public CoduriRaspunsOperatieCard ExecutaAutentificare(string pin, bool autentificareCuUM)
+
+``` public CoduriRaspunsOperatieCard ExecutaAutentificare(string pin, bool autentificareCuUM)
     {
       CoduriRaspunsOperatieCard raspunsOperatieCard1 = CoduriRaspunsOperatieCard.ERR_AUTENTIFICARE;
       bool canResetPIN = false;
@@ -111,13 +112,13 @@ blocarea cardului apare cel mai probabil aici
       }
       return raspunsOperatieCard1;
     }
-    
+  ```  
     
     Problemele sunt urmatoarele:
-    a) nu ar trebui sa se ajunga aici (ar trebui sa nu se ceara niciodata introducere pin daca nu e ok ceva )
-    b) daca este o problema cu cardul sa nu se faca blocarea card practic asta inseamna sa nu se ajunga la raspuns din UM card blocat care sa permita executarea codului
+    a) nu ar trebui sa se blocheze cardul pe secventa aceasta de cod. (ar trebui sa nu se ceara niciodata introducere pin daca nu e ok ceva )
+    b) daca este o problema cu cardul sa nu se faca blocarea card. Practic asta inseamna sa nu se ajunga la raspuns din UM card blocat care sa permita executarea codului
     
-      else if (raspunsOperatieCard2 != CoduriRaspunsOperatieCard.OK || raspunsOperatie != CoduriRaspunsOperatieCard.OK)
+      ``` else if (raspunsOperatieCard2 != CoduriRaspunsOperatieCard.OK || raspunsOperatie != CoduriRaspunsOperatieCard.OK)
             {
               if (raspunsOperatieCard2 == CoduriRaspunsOperatieCard.ERR_CARD_BLOCKED)
                 this.StareCard = StareCard.Blocat;
@@ -125,37 +126,28 @@ blocarea cardului apare cel mai probabil aici
               this.SeteazaStareComunicatieCuUM(raspunsOperatie);
               return raspunsOperatie != CoduriRaspunsOperatieCard.OK ? raspunsOperatie : (raspunsOperatieCard2 != CoduriRaspunsOperatieCard.OK ? raspunsOperatieCard2 : CoduriRaspunsOperatieCard.ERR_AUTENTIFICARE);
             }
+            ```
             
             Blocarea efectiva se face aici: 
-            this.StareCard = StareCard.Blocat;
             
+            ```this.StareCard = StareCard.Blocat;
+            ```
         
 
 ############################################################
 
-Acest cod este disponibil asa cum este. Pentru clarificare, codul acesta a fost generat in timpul timpului liber,
-utilizand diferite unelte disponibile public (Mono.Cecil, JetBrains DotPeek) 
+Acest cod este disponibil asa cum este (as is) . 
+Ccodul acesta a fost generat in timpul timpului liber,utilizand diferite unelte disponibile public (Mono.Cecil, JetBrains DotPeek) 
 si analizand modul de functionare al sdk actual.
-Codul existent nu este identic cu codul sursa detinut de casa nationala de asigurari de sanatate.
-Ca urmare pot exista diferente de functionalitate atunci cand se compileaza.
-@fixed
-#########Pentru a putea compila la un dll valid sunt necesare modificari suplimentare in cod.#####
 
-Acest cod a fost publicat cu scopul de a permite dezvoltatorilor independenti 
-identificarea cauzelor generatoare de probleme in cadrul sistemului CEAS al casei nationale 
-si  a dovedi in instanta daca e cazul ca problemele din sistem 
-sunt generate de componenta Novensys.SDK si nu de aplicatiile dezvoltatorilor independenti,
-acesti sabotori marsavi care nu doresc eliminarea fraudei din sistemul de sanatate.
+Din cauzele de mai sus, codul existent nu este identic 100% cu codul sursa detinut de casa nationala de asigurari de sanatate.
 
+######### Pentru a putea compila la un dll valid sunt necesare modificari suplimentare in cod.#####
 
-Deasemeni scopul a fost de a imbunatati pe cat posibil aceasta porcarie numita sdk prin contributia comuna
-a dezvoltatorilor. Ideal si de buna cuvinta ar fi sa fie publicate aici contributiile aduse codului
-de catre cei ce beneficiaza pe aceasta cale de informatiile cuprinse in surse.
+Acest cod a fost publicat cu scopul de a permite dezvoltatorilor independenti identificarea cauzelor generatoare de probleme in cadrul sistemului CEAS al casei nationale in vederea imbunatatirii interactiunii dintre aplicatii si componenta Novensys
 
-Un alt motiv pentru publicarea acestui cod a fost lipsa de informatii si documentarea frugala, acesta fiind dealtfel
-si principalul motiv pentru care eu personal numesc acest sdk o porcarie, codul in sine fiind ok pana la un punct iar anumite abordari chiar interesante ( sa nu fie cumva vina decompliatorului ).
-
-Multumesc de aceea dezvoltatorilor ne numiti care pana la un punct au dezvoltat aceasta componenta software si evident Casei Nationale de Asigurari de Sanatate , Novensys. Sper sa isi gaseasca utilitatea cel putin ca material didactic.
+Ca scop secundar, daca cineva doreste poate imbunatatii codul in vederea creerii unui sdk compatibil CEAS dar fara problemele mentionate. Evident, o asemenea componenta nu este suportata de casa nationala/dezvoltatorul initial. 
+O a treia utilitate este aceea de material didactic.
 
 
 
