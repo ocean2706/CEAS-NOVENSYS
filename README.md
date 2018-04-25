@@ -1,8 +1,16 @@
 # CEAS-NOVENSYS
 cod sursa pentru NOVENSYS SDK reversed by different tools
 
+## Motive
+Casa Nationala de Asigurari de Sanatate a considerat necesara securizarea operatiilor online privind serviciile medicale si retetelor, prin verificarea prezentei pacientilor la oferirea serviciilor de catre furnizori. Solutia aleasa a fost introducerea cardului de asigurat in sistemul medical. Pentru a putea citi cardurile pacientilor in aplicatiile casei si cele ale furnizorilor software, a fost pus la punct de catre firma Novensys un set de dll-uri (Novensys SDK) scrise in C#, care sa permita diferite operatii cu cititoarele de carduri inrolate in sistem la momentul dezvoltarii.
+Dupa punerea in functiune a sistemului, utilizatorii au observat o serie de anomalii si probleme care de multe ori au condus la imposibilitatea furnizarii serviciilor medicale sau eliberarii retetelor.
 
-## Blocare  card ##
+SDK-ul Novensys nu a fost pus la dispozitia publicului sub forma codului sursa, ceea ce a creeat numeroase conflicte intre dezvoltatori, clientii acestora, pacienti si casa in mare parte si datorita lipsei de suport din partea furnizorului software.
+Una din principalele probleme a fost blocarea cardului in cititor, in momentul in care serverul CEAS ( serverul in care se realizeaza verificarea cardului asiguratului ) nu era disponibil. Ulterior, aplicatiile au fost actualizate cu un mod de lucru "OFFLINE" care a condus la rezolvarea unor probleme.
+Necesitatea ca dezvoltatorii sa aiba acces la codul sursa al anumitor componente ale sistemului SIUI/CEAS/DES a ramas.
+
+
+## Blocare  card 
 Blocarea cardului in diferite situatii in care in mod normal NU ar trebui sa se blocheze,  apare cel mai probabil aici
 
 ```public CoduriRaspunsOperatieCard ExecutaAutentificare(string pin, bool autentificareCuUM)
