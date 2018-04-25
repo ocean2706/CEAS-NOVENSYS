@@ -113,10 +113,9 @@ Blocarea cardului in diferite situatii in care in mod normal NU ar trebui sa se 
       return raspunsOperatieCard1;
     }
  ```
-    
-    Problemele sunt urmatoarele:
-    a) nu ar trebui sa se blocheze cardul pe secventa aceasta de cod. (ar trebui sa nu se ceara niciodata introducere pin daca nu e ok ceva )
-    b) daca este o problema cu cardul sa nu se faca blocarea card. Practic asta inseamna sa nu se ajunga la raspuns din UM card blocat care sa permita executarea codului de mai jos
+ Problemele sunt urmatoarele:
+ + nu ar trebui sa se blocheze cardul pe secventa aceasta de cod. (ar trebui sa nu se ceara niciodata introducere pin daca nu e ok ceva )
+ + daca este o problema cu cardul sa nu se faca blocarea card. Practic asta inseamna sa nu se ajunga la raspuns din UM card blocat care sa permita executarea codului de mai jos
     
 ```else if (raspunsOperatieCard2 != CoduriRaspunsOperatieCard.OK || raspunsOperatie != CoduriRaspunsOperatieCard.OK)
             {
@@ -128,8 +127,9 @@ Blocarea cardului in diferite situatii in care in mod normal NU ar trebui sa se 
             }
 ```
             
-            Blocarea efectiva se face aici: 
-```this.StareCard = StareCard.Blocat;
+Blocarea efectiva se face aici: 
+```
+this.StareCard = StareCard.Blocat;
 ```
         
 
