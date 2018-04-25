@@ -112,13 +112,13 @@ blocarea cardului apare cel mai probabil aici
       }
       return raspunsOperatieCard1;
     }
-  ```  
+ ```
     
     Problemele sunt urmatoarele:
     a) nu ar trebui sa se blocheze cardul pe secventa aceasta de cod. (ar trebui sa nu se ceara niciodata introducere pin daca nu e ok ceva )
     b) daca este o problema cu cardul sa nu se faca blocarea card. Practic asta inseamna sa nu se ajunga la raspuns din UM card blocat care sa permita executarea codului
     
-      ``` else if (raspunsOperatieCard2 != CoduriRaspunsOperatieCard.OK || raspunsOperatie != CoduriRaspunsOperatieCard.OK)
+      ```else if (raspunsOperatieCard2 != CoduriRaspunsOperatieCard.OK || raspunsOperatie != CoduriRaspunsOperatieCard.OK)
             {
               if (raspunsOperatieCard2 == CoduriRaspunsOperatieCard.ERR_CARD_BLOCKED)
                 this.StareCard = StareCard.Blocat;
@@ -126,7 +126,7 @@ blocarea cardului apare cel mai probabil aici
               this.SeteazaStareComunicatieCuUM(raspunsOperatie);
               return raspunsOperatie != CoduriRaspunsOperatieCard.OK ? raspunsOperatie : (raspunsOperatieCard2 != CoduriRaspunsOperatieCard.OK ? raspunsOperatieCard2 : CoduriRaspunsOperatieCard.ERR_AUTENTIFICARE);
             }
-            ```
+```
             
             Blocarea efectiva se face aici: 
             
